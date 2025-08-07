@@ -10,7 +10,7 @@ import asyncio
 import edge_tts
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
-from PIL import Image
+
 
 
 # CONFIG
