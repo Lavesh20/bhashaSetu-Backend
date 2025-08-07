@@ -11,7 +11,7 @@ import edge_tts
 from werkzeug.utils import secure_filename
 from flask_cors import CORS
 from PIL import Image
-import pytesseract
+
 
 # CONFIG
 app = Flask(__name__)
@@ -46,23 +46,23 @@ def extract_text_from_pdf(pdf_path):
             text += page.get_text()
     return text.strip()
 
-def extract_text_from_image(image_path):
-    try:
-        import pytesseract
-        img = Image.open(image_path)
-        text = pytesseract.image_to_string(img)
-        return text.strip()
-    except ImportError:
-        # Fallback: use basic OCR or return empty
-        return "OCR not available. Please install pytesseract."
-    except Exception as e:
-        return f"Error extracting text from image: {str(e)}"
+# def extract_text_from_image(image_path):
+#     try:
+#         import pytesseract
+#         img = Image.open(image_path)
+#         text = pytesseract.image_to_string(img)
+#         return text.strip()
+#     except ImportError:
+#         # Fallback: use basic OCR or return empty
+#         return "OCR not available. Please install pytesseract."
+#     except Exception as e:
+#         return f"Error extracting text from image: {str(e)}"
 
 def extract_text_from_file(file_path, file_type):
     if file_type == 'application/pdf':
         return extract_text_from_pdf(file_path)
-    elif file_type.startswith('image/'):
-        return extract_text_from_image(file_path)
+    # elif file_type.startswith('image/'):
+    #     return extract_text_from_image(file_path)
     else:
         return ""
 
