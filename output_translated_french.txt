@@ -1,0 +1,141 @@
+Here's the translation of the provided English text into French:
+
+**Conception et Implémentation d'un Chatbot Médical**
+
+**Conception et Implémentation d'un Chatbot Médical**
+
+**Résumé**
+
+Les systèmes de santé du monde entier rencontrent des défis tels que la surcharge des demandes des patients, le nombre limité de professionnels de la santé et l'accès inégal aux conseils médicaux. Cette étude présente un chatbot médical intelligent, basé sur l'IA, qui vise à identifier les maladies possibles en fonction des symptômes décrits par les utilisateurs et à suggérer des remèdes appropriés et des médicaments en vente libre. Le chatbot utilise le traitement du langage naturel pour analyser les saisies des utilisateurs et s'appuie sur une base de connaissances symptômes-maladies pour fournir des recommandations médicales. Dans cet article, nous souhaitons explorer et approfondir les chatbots qui pourraient aider les gens à obtenir le même traitement approprié qu'un médecin [1]. En servant de ressource de triage initiale, il tente d'améliorer l'accessibilité aux soins de santé, en particulier dans les zones où les ressources sont plus limitées. Les résultats des tests montrent la précision et la fiabilité du chatbot dans la fourniture de conseils de santé généraux, tout en soulignant qu'il ne doit pas remplacer une consultation médicale professionnelle. De plus, il permettra aux patients d'en apprendre plus facilement sur leur maladie et les incitera à prendre les précautions nécessaires pour rester en bonne santé [2].
+
+**Mots-clés :** Chatbot médical, vérificateur de symptômes, intelligence artificielle, traitement du langage naturel, automatisation des soins de santé, détection des maladies, assistant de santé virtuel.
+
+**Introduction**
+
+Ces dernières années, les gens sont devenus dépendants d'Internet pour obtenir des informations sur tous les problèmes auxquels ils sont confrontés. Cela incite non seulement les gens à rechercher des connaissances sur des sujets généraux, mais aussi sur leurs problèmes de santé. Les chatbots sont des programmes logiciels qui interagissent avec les humains par le biais du langage naturel dans le seul but de simuler une conversation de type humain en réponse à du texte ou à de la voix [3]. On observe une croissance sans précédent de la demande pour des services de santé abordables et efficaces au cours des dernières décennies. Dans de nombreuses régions du monde, en particulier dans les zones rurales ou urbaines défavorisées, une pénurie de prestataires médicaux qualifiés entraîne un traitement tardif ou non satisfait. De plus, les patients sont trop souvent incapables d'apprécier la gravité des symptômes, ce qui entraîne un sous-traitement ou une alarme injustifiée.
+
+Après 2016, les chatbots ont été décrits comme des logiciels technologiques essentiels et maintenant les prestataires de soins de santé utilisent des chatbots liés à la médecine pour les questions et réponses, la sauvegarde des dossiers des patients, la fourniture d'informations sur la maladie, la prise de mesures en fonction des réponses des patients et la discussion des résultats des tests cliniques [4]. Le besoin d'un diagnostic fiable et précis suscite l'essor d'une nouvelle génération de technologie de soins de santé appelée Chatbot médical. L'idée principale de la création de ce chatbot est de reproduire une discussion entre personnes [5]. Cela aide les gens à en apprendre davantage sur leurs symptômes et à leur donner le diagnostic le plus précis possible.
+
+Le chatbot proposé, basé sur l'IA, est destiné à fournir aux utilisateurs des recommandations diagnostiques préliminaires pour leurs descriptions symptomatiques. Soutenu par des algorithmes d'apprentissage automatique avancés et une vaste base de données de maladies et de symptômes, le système analyse les données d'entrée, suggère des affections potentielles et fournit des traitements généraux ou des médicaments en vente libre. Le chatbot est utilisé comme source d'informations plutôt que comme expert en diagnostic afin de réduire la charge de travail des professionnels de la santé et de permettre aux utilisateurs de prendre des décisions plus éclairées en matière de soins de santé. Plus de personnes que jamais auparavant recherchent des informations sur la santé. Les conseils de santé généraux et les conseils pour les actions futures du patient en matière de traitement médical augmentent rapidement. La surréservation et la charge de travail sont reconnues. Les chatbots de santé peuvent accélérer les procédures, offrant aux patients et au personnel médical plus de temps disponible. Ils peuvent également empêcher que des choses ne se produisent qui prennent trop de temps aux individus et rapportent peu.
+
+**Revue de la littérature**
+
+Plusieurs études antérieures ont examiné l'application de l'intelligence artificielle dans le soutien aux soins de santé. IBM Watson a prouvé la possibilité de l'apprentissage automatique en oncologie et dans la prise de décisions cliniques. La création de chatbots basés sur l'IA en médecine a suscité un énorme intérêt au cours de la dernière décennie à la suite des progrès émergents dans le traitement du langage naturel, les mégadonnées et l'informatique médicale. Les experts et les développeurs de logiciels utilisent désormais ces technologies pour développer des systèmes capables d'aider à la prise de décision diagnostique, à la gestion des demandes des patients et à la fourniture de conseils médicaux.
+
+L'intelligence artificielle a été utilisée avec succès dans l'imagerie médicale et le diagnostic, aidant les experts à repérer des schémas qu'il est peut-être difficile pour l'œil humain de voir. Esteva et al. (2017) ont prouvé que les réseaux neuronaux profonds pouvaient diagnostiquer le cancer de la peau avec autant de précision que les dermatologues [6].
+
+Ces succès ont jeté les bases du développement de systèmes d'IA conversationnels qui simulent des capacités de diagnostic via une interaction textuelle ou vocale. Les chatbots médicaux visent à fournir des évaluations préliminaires, à recommander des actions ou à orienter les utilisateurs vers une aide médicale supplémentaire.
+
+Une étude comparative de Millenson et al. (2020) a évalué 23 vérificateurs de symptômes et a constaté des variations significatives dans la précision du diagnostic, soulignant l'importance de la formation continue des données et de la transparence dans les modèles algorithmiques [7].
+
+Les récents développements de l'IA multimodale combinant le texte, l'image et les données de capteurs ouvrent la voie à des chatbots encore plus sophistiqués. L'intégration avec des appareils portables (par exemple, Fitbit, Apple Watch) permet un suivi des symptômes en temps réel. De plus, les assistants vocaux gagnent en popularité, en particulier auprès des utilisateurs âgés, en raison de leur accessibilité et de leur commodité [8].
+
+**Système existant**
+
+Ces dernières années, de nombreuses applications de soins de santé ont été développées pour prendre en charge la vérification des symptômes, le triage et la consultation virtuelle. Ces systèmes se répartissent principalement en trois catégories : les vérificateurs de symptômes traditionnels basés sur le Web, les applications mobiles basées sur l'IA et les assistants virtuels basés sur des règles. Chacun a contribué de manière significative à l'évolution des soins de santé conversationnels, mais chacun présente également des limites distinctes auxquelles le système proposé vise à répondre. Il s'agit notamment des outils Web traditionnels, des applications de santé mobiles et des chatbots conversationnels. Bien que ces systèmes aient rendu les informations sur les soins de santé plus accessibles, ils présentent des limitations importantes en matière de personnalisation, de précision et de fiabilité clinique.
+
+1. **Vérificateurs de symptômes traditionnels basés sur le Web**
+
+Les plateformes Web comme WebMD et Mayo Clinic Symptom Checker permettent aux utilisateurs de saisir leurs symptômes et de recevoir les affections possibles ainsi que des conseils de base. Ces systèmes sont basés sur des arbres de décision statiques ou des règles définies par des experts.
+
+**Avantages :** Facile d'accès, interfaces simples, contenu médicalement vérifié.
+
+**Inconvénients :** Personnalisation limitée, manque d'interaction conversationnelle et absence d'apprentissage dynamique ou d'intégration NLP.
+
+2. **Applications mobiles basées sur l'IA**
+
+Les applications comme Ada Health, Babylon Health et Buoy Health représentent une génération plus avancée de vérificateurs de symptômes qui intègrent des algorithmes d'IA, un raisonnement probabiliste et le traitement du langage naturel pour des évaluations en temps réel.
+
+* **Ada Health :** Utilise une vaste base de connaissances médicales et un raisonnement bayésien pour évaluer les symptômes. Il apprend continuellement à partir de nouvelles données et des commentaires des patients [9].
+* **Babylon Health :** Combine la vérification des symptômes avec des fonctionnalités de télémédecine. L'IA de Babylon tente de trier les utilisateurs avant de les connecter à un médecin.
+* **Buoy Health :** Intègre des données rapportées par les patients en temps réel et offre des recommandations personnalisées. Il est utilisé par des institutions comme Harvard Medical School [10].
+
+3. **Chatbots basés sur des règles**
+
+Plusieurs implémentations précoces de chatbots médicaux comme HealthTap, Your.MD et Woebot reposent fortement sur des arbres de réponses préprogrammés et la correspondance de mots-clés.
+
+Ces systèmes manquent d'une compréhension contextuelle approfondie, ont souvent du mal avec les requêtes ambiguës et ne parviennent pas à personnaliser les réponses au-delà des filtres démographiques de base.
+
+**Exemple :** Your.MD répond à « J'ai des douleurs thoraciques et de la toux » avec un ensemble de FAQ et d'articles au lieu d'une conversation diagnostique intégrée.
+
+**Tableau récapitulatif des systèmes existants**
+
+**Méthodologie**
+
+Cette recherche se concentre sur la conception et l'implémentation d'un chatbot médical alimenté par l'IA qui aide les utilisateurs à détecter les maladies potentielles en fonction des symptômes autodéclarés et fournit des remèdes fondés sur des preuves et des suggestions de médicaments en vente libre (OTC). Le chatbot tire parti du modèle de langage BioMistral-7B, de RxNorm et des API de la FDA pour garantir la pertinence clinique, la standardisation et la conformité aux normes de sécurité des soins de santé.
+
+1. **Analyse des besoins**
+
+Une évaluation des besoins a été effectuée au moyen d'enquêtes distribuées à 250 utilisateurs potentiels, notamment des étudiants, des professionnels en activité et des personnes âgées. Les principales exigences identifiées étaient :
+
+* Précision de la détection des maladies en fonction de plusieurs symptômes
+* Clarté de la langue utilisée pour les recommandations de santé
+* Fiabilité des informations sur les médicaments
+
+2. **Présentation du système**
+
+Le système proposé comprend cinq composants principaux :
+
+* Interface utilisateur (UI) pour la collecte des symptômes et des données relatives aux médicaments.
+* Couche de modèle d'apprentissage automatique, alimentée par BioMistral via Ollama et améliorée avec Gemini Flash 2.0.
+* Couche d'intégration API pour l'interrogation des bases de données médicales (RxNorm, FDA, Gemini API).
+* Module de rendu des réponses pour afficher les résultats intelligents.
+* Logique backend pour la gestion des données, la sécurité et l'intégration.
+
+**Fig. 1 Solution proposée**
+
+**Fig. 2 Architecture du système**
+
+**Implémentation**
+
+L'implémentation du chatbot médical basé sur l'IA suit une approche modulaire et évolutive pour garantir la précision, la rapidité et la conformité réglementaire. Cette section détaille l'architecture full-stack, l'intégration de BioMistral-7B, RxNorm et des API de la FDA, et les services backend utilisés pour fournir une interprétation des symptômes en temps réel et des recommandations de remèdes.
+
+Le modèle BioMistral-7B a été hébergé sur un environnement cloud compatible GPU à l'aide de Hugging Face Transformers. Il a été interrogé via des points de terminaison REST API à partir du backend. Les modèles d'invite ont été optimisés pour une extraction cohérente des symptômes et une prédiction des conditions.
+
+Après l'extraction des symptômes, un module de prédiction des maladies a été utilisé, qui comprend :
+
+* Correspondance TF-IDF pondérée avec des vecteurs de symptômes médicaux.
+* Correspondance d'incorporation sémantique à l'aide d'incorporations BioWordVec pour la notation de la pertinence clinique.
+
+Une fois une condition détectée, le chatbot interroge :
+
+* API RxNorm pour obtenir les identifiants de médicaments standardisés (RXCUI).
+* API de la FDA pour récupérer les données de sécurité, la posologie, les restrictions d'âge, les avertissements et la classification (OTC/Rx).
+* API DrugBank (facultative) pour la composition chimique et les interactions médicamenteuses.
+
+**Exemple de flux de travail :**
+
+* Symptôme : Fièvre, maux de tête
+* BioMistral Probablement : Fièvre virale
+* RxNorm Requête pour « paracétamol » RXCUI : 161
+* API FDA Montre que Tylenol Extra Fort est en vente libre, Dose maximale 4000mg/jour
+
+**Conclusion**
+
+Cette recherche présente la conception et l'implémentation d'un chatbot médical robuste basé sur l'IA qui tire parti du traitement avancé du langage naturel via BioMistral-7B et intègre les API RxNorm et FDA pour fournir des conseils de soins de santé intelligents, sûrs et personnalisés. En extrayant les symptômes signalés par l'utilisateur en langage naturel, en les reliant à des conditions probables à l'aide de bases de connaissances biomédicales et en recommandant des remèdes et des médicaments en vente libre avec des données médicamenteuses validées, le système agit comme un assistant de triage de première ligne accessible.
+
+Le chatbot a démontré une grande précision dans l'identification des affections courantes et la correspondance des remèdes, tout en maintenant la sécurité des utilisateurs en intégrant la détection des signaux d'alerte pour les symptômes d'urgence. Son intégration avec des API approuvées par les organismes de réglementation garantit que tous les traitements suggérés sont à jour, conformes et appropriés pour une utilisation en automédication.
+
+**Références**
+
+[1].https://www.researchgate.net/publication/346474932_Medical_Chatbot_Techniques_A_Review
+
+[2].https://www.sciencedirect.com/science/article/pii/S2772503024000392
+
+[3]. M.N.U.R. Chowdhury, A. Haque, H. Soliman Chatbots: Un tournant décisif dans la mSanté
+
+2023 sixième symposium international sur l'informatique, la consommation et le contrôle (IS3C), IEEE (2023, juin), pp. 362-366
+
+[4]. Semigran, H. L., Linder, J. A., Gidengil, C., & Mehrotra, A. (2015). Évaluation des vérificateurs de symptômes pour l'autodiagnostic et le triage : étude d'audit, BMJ, 351,h3480.https://doi.org/10.1136/bmj.h3480
+
+[5]. Dharwadkar, R., Deshpande, N.A. : Un chatbot médical. Int. J. Comput. TrendsTechnol. (IJCTT) 60, 4145 (2018)
+
+[6]. Esteva, A., Kuprel, B., Novoa, R. A., et al. (2017). Classification du cancer de la peau au niveau dermatologique avec des réseaux neuronaux profonds. Nature, 542(7639), 115118. https://doi.org/10.1038/nature21056
+
+[7]. Millenson, M. L., Baldwin, J. L., Zipperer, L., & Singh, H. (2020). Au-delà du Dr. Google : les preuves sur les outils numériques destinés aux consommateurs pour le diagnostic. Diagnosis, 7(3), 247256. https://doi.org/10.1515/dx-2019-0106
+
+[8]. Yang, G., et al. (2021). Une enquête sur la santé intelligente : analyse intelligente, application et défis de recherche. Sensors, 21(2), 436. https://doi.org/10.3390/s21020436
+
+[9]. S. Gilbert, S. Mehlman, H. Adler, et al., Ada Health : Amélioration de la précision du diagnostic grâce à l'IA, Journal of Medical Systems, vol. 43, non. 10, 2019. https://doi.org/10.1007/s10916-019-1453-6
+
+[10]. Harvard Health Publishing (2021). Harvard s'associe à Buoy Health pour guider les patients en ligne, https://www.health.harvard.edu/news
