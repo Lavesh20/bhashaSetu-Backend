@@ -20,7 +20,9 @@ UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 # Gemini
-GEMINI_API_KEY = "AIzaSyDcoo1M4Zio5d0_b3EvVU-jlH2QmfuN7CY"  # Replace with your key
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
+if not GEMINI_API_KEY:
+    raise ValueError("GEMINI_API_KEY not set in environment")
 genai.configure(api_key=GEMINI_API_KEY)
 model = genai.GenerativeModel("gemini-2.0-flash")
 
@@ -165,4 +167,5 @@ def translate():
 
 # MAIN
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
