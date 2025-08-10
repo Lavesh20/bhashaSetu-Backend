@@ -108,6 +108,11 @@ async def generate_audio(text, lang):
 
 
 # ROUTES
+
+@app.route("/" , methods = ["GET"])
+def index():
+    return "Welcome to the Translation API"
+
 @app.route("/uploads/<filename>")
 def serve_audio(filename):
     """Serve audio files from the uploads directory"""
