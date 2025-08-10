@@ -8,7 +8,7 @@ This README documents how to deploy the **BhashaSetu** Flask backend on an AWS E
 
 - An AWS EC2 instance (Ubuntu 20.04 / 22.04 recommended) with sudo access.
 - A public IPv4 address assigned to the EC2 instance.
-- Domain/subdomain (here we used `bhashasetu.duckdns.org`) pointed to the EC2 public IP (DuckDNS or any DNS provider).
+- Domain/subdomain pointed to the EC2 public IP.
 - Security Group: allow **SSH(22)**, **HTTP(80)** and **HTTPS(443)** inbound. (You can restrict other ports later.)
 - Python 3.8+ installed on the EC2 instance.
 - Git installed if you plan to clone from GitHub.
