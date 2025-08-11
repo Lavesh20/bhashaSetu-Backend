@@ -349,4 +349,4 @@ This repository is configured to automatically deploy changes from the `main` br
    ```
 ---
 
-*Prepared to match the deployment steps used for BhashaSetu on an EC2 instance.*
+*Prepared to match the deployment steps used for Bhasha-Setu on an EC2 instance.*
