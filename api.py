@@ -111,7 +111,7 @@ async def generate_audio(text, lang):
 
 @app.route("/" , methods = ["GET"])
 def index():
-    return 
+    return jsonify({"message": "Welcome to the Translation API"})
 
 @app.route("/health", methods=["GET"])
 def health_check():
