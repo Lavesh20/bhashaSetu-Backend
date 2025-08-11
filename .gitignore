@@ -6,5 +6,5 @@ translate_pdf.py
 Medical_Chatbot_IEEE_Format.pdf
 .env
 
- github_action_key
- github_action_key.pub
+github_action_key
+github_action_key.pub
