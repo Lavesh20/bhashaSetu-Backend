@@ -273,7 +273,80 @@ sudo journalctl -u bhashasetu -n 200
 sudo nginx -t
 sudo lsof -i -P -n | grep LISTEN
 ```
+# GitHub Actions CI/CD to EC2
 
+This repository is configured to automatically deploy changes from the `main` branch to an AWS EC2 instance using **GitHub Actions** and **SSH**.
+
+## How It Works
+
+1. **Push to Main Branch**
+   - Whenever you push commits to the `main` branch, GitHub Actions workflow (`.github/workflows/deploy.yml`) will run.
+
+2. **GitHub Actions Workflow**
+   - The workflow checks out the repository code.
+   - Connects to your EC2 instance via SSH using the private key stored in GitHub Secrets.
+   - Runs deployment commands on the EC2 instance:
+     - `git pull origin main` to update the code.
+     - Restarts your application using `systemctl`.
+
+3. **Secrets Used**
+   - `EC2_HOST` → Public IP or domain of your EC2 instance.
+   - `EC2_SSH_KEY` → Private SSH key for accessing EC2.
+
+## Setup Steps
+
+1. **Generate SSH Key (without passphrase)**
+   ```bash
+   ssh-keygen -t rsa -b 4096 -C "github-actions" -f github_action_key_new
+   ```
+
+2. **Add Public Key to EC2**
+   ```bash
+   ssh ubuntu@<EC2-IP>
+   mkdir -p ~/.ssh
+   cat github_action_key_new.pub >> ~/.ssh/authorized_keys
+   chmod 600 ~/.ssh/authorized_keys
+   ```
+
+3. **Store Private Key in GitHub Secrets**
+   - Go to **Repo → Settings → Secrets and variables → Actions → New repository secret**
+   - Name: `EC2_SSH_KEY`
+   - Value: contents of `github_action_key_new`
+
+4. **Store EC2 Host in GitHub Secrets**
+   - Name: `EC2_HOST`
+   - Value: your EC2 public IP or domain.
+
+5. **Deploy Workflow File**
+   - File: `.github/workflows/deploy.yml`
+   ```yaml
+   name: Deploy to EC2
+
+   on:
+     push:
+       branches:
+         - main
+
+   jobs:
+     deploy:
+       runs-on: ubuntu-latest
+
+       steps:
+         - name: Checkout repo
+           uses: actions/checkout@v3
+
+         - name: Deploy to EC2 via SSH
+           uses: appleboy/ssh-action@v0.1.7
+           with:
+             host: ${{ secrets.EC2_HOST }}
+             username: ubuntu
+             key: ${{ secrets.EC2_SSH_KEY }}
+             port: 22
+             script: |
+               cd /path/to/your/project
+               git pull origin main
+               sudo systemctl restart myapp.service
+   ```
 ---
 
 *Prepared to match the deployment steps used for BhashaSetu on an EC2 instance.*
