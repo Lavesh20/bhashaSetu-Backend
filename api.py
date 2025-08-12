@@ -15,7 +15,7 @@ from flask_cors import CORS
 
 # CONFIG
 app = Flask(__name__)
-CORS(app, origins=["https://bhashasetu-kappa.vercel.app"])
+CORS(app, origins=["https://bhashasetu-kappa.vercel.app" , "http://bhashasetu-frontend.s3-website.ap-south-1.amazonaws.com"])
 UPLOAD_FOLDER = "uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
