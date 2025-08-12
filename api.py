@@ -58,7 +58,7 @@ def extract_text_from_pdf(pdf_path):
 #         # Fallback: use basic OCR or return empty
 #         return "OCR not available. Please install pytesseract."
 #     except Exception as e:
-#         return f"Error extracting text from image: {str(e)}"
+#         return f"Error extracting text from image: {str(e)}"dzvfdbv
 
 def extract_text_from_file(file_path, file_type):
     if file_type == 'application/pdf':
